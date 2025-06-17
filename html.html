@@ -1,0 +1,128 @@
+<section id="contact" class="contact-section">
+  <h2>vous avez un <span>projet en tête</span></h2>
+  <h2>N'hésitez pas à me <span>contacter</span></h2>
+  <form class="contact-form" onsubmit="return showConfirmation(event)">
+    <div class="input-group">
+      <input type="text" placeholder="Votre prénom" id="nom" required />
+      <input type="text" placeholder="Votre nom" size="" required />
+    </div>
+    <input type="text" placeholder="Votre sujet" id="sujet" required />
+    <textarea rows="5" placeholder="Votre message..." required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+  <!-- POPUP DE CONFIRMATION -->
+<div id="popup" class="popup">
+  <div class="popup-content">
+    <h2>🎉 Bravo !</h2>
+    <p>Nous avons bien reçu votre sujet. Nous vous rappellerons très bientôt.</p>
+    <button onclick="closePopup()">Fermer</button>
+</div>
+</div>
+
+
+
+.contact-section h2 span {
+  color: rgb(14, 14, 241); /* turquoise */
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-group {
+  display: flex;
+  gap: 30px;
+  
+}
+
+.input-group input {
+  flex: 1;
+  border: 2px solid rgb(14, 14, 241);
+  border-color: rgb(14, 14, 241);
+}
+
+input, textarea {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+  border-color: rgb(14, 14, 241);
+  border: 2px solid rgb(14, 14, 241);
+}
+
+button {
+  background-color: rgb(14, 14, 241);
+  color: white;
+  padding: 15px 30px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  width: fit-content;
+  margin: auto;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #00bfbf;
+}
+
+.footer {
+  margin-top: 40px;
+  font-size: 14px;
+}
+
+.footer a {
+  color: #00d9d9;
+  text-decoration: none;
+}
+.popup {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+
+.popup-content {
+  background: white;
+  padding: 30px;
+  border-radius: 10px;
+  text-align: center;
+  animation: zoomIn 0.5s ease;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+}
+
+.popup-content h2 {
+  color: green;
+  margin-bottom: 10px;
+}
+
+.popup-content button {
+  margin-top: 15px;
+  padding: 8px 20px;
+  background: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@keyframes zoomIn {
+  from {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity:1;
+}
+}
